@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2023 at 07:38 AM
+-- Generation Time: Sep 19, 2023 at 07:48 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `bank`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `id_akun` int(3) NOT NULL,
+  `nama_akun` varchar(255) NOT NULL,
+  `saldo` decimal(7,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id_akun`, `nama_akun`, `saldo`) VALUES
+(1, 'salwa', '100000'),
+(2, 'salsa', '150000'),
+(3, 'nurhamida\r\n', '5000'),
+(4, 'kafin', '80909'),
+(5, 'elsa', '90900');
 
 -- --------------------------------------------------------
 
@@ -58,6 +81,12 @@ INSERT INTO `transactions` (`id`, `jenis_transaksi`, `jumlah_transaksi`, `tangga
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`id_akun`);
+
+--
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -67,6 +96,12 @@ ALTER TABLE `transactions`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `id_akun` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `transactions`
