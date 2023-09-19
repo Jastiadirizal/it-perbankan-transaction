@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2023 at 05:48 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Sep 19, 2023 at 07:48 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,9 +38,11 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id_akun`, `nama_akun`, `saldo`) VALUES
-(1, 'salwasal', '100000'),
-(2, 'salsalwa', '1505000'),
-(3, 'abc', '5000');
+(1, 'salwa', '100000'),
+(2, 'salsa', '150000'),
+(3, 'nurhamida\r\n', '5000'),
+(4, 'kafin', '80909'),
+(5, 'elsa', '90900');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,17 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `jenis_transaksi`, `jumlah_transaksi`, `tanggal_transaksi`, `id_akun`) VALUES
 (1, 'kredit', '35000', '2023-09-01', 2),
-(2, 'kredit', '5000', '2023-09-08', 2);
+(2, 'kredit', '5000', '2023-09-08', 2),
+(3, 'debit', '25000', '2023-09-06', 1),
+(4, 'kredit', '10000', '2023-09-15', 3),
+(5, 'debit', '30000', '2023-09-30', 3),
+(6, 'kredit', '50000', '2023-09-20', 3),
+(7, 'debit', '90000', '2023-09-21', 3),
+(8, 'kredit', '50000', '2023-09-07', 2),
+(9, 'kredit', '10001', '2023-09-29', 2),
+(10, 'kredit', '10001', '2023-09-28', 3),
+(12, 'kredit', '500', '2023-09-12', 4),
+(13, 'debit', '750', '2023-09-19', 4);
 
 --
 -- Indexes for dumped tables
@@ -89,13 +101,13 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id_akun` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_akun` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
